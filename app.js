@@ -19,6 +19,17 @@ app.use('/v1/community', communityRoutes);
 const memberRoutes = require('./routes/member.js');
 app.use('/v1/member', memberRoutes);
 
+app.get('/', (req, res) => {
+    res.json({
+        message: `
+            Api routes:
+            -> /v1/role - has 2 sub routes
+            -> /v1/auth - has 3 sub routes
+            -> /v1/community - has 5 sub routes
+            -> /v1/member - has 2 sub routes
+        `
+    });
+})
 
 
 app.get('/v1', (req, res) => {

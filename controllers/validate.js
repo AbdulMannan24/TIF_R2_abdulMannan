@@ -52,6 +52,17 @@ async function validateInput(body, route) {
         }
     }
 
+    if (route == 'signIn') {
+        let userExists = await user.findOne({ email: email});
+        if (!userExists) {
+            output.status = false;
+            output.errors.push({
+                "param": "email",
+                "message": "Please provide a valid email address.",
+                "code": "INVALID_INPUT"
+            })
+        }
+    }
     return output;
 }
 

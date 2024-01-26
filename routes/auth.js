@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 // routes
-// const signUpRoute = require('./auth/signUp');
-// router.use('/signUp', signUpRoute);
+const signUpRoute = require('./auth/signUp');
+router.use('/signUp', signUpRoute);
 
 // const signInRoute = require('./auth/signIn');
 // router.use('/signIn', signInRoute);

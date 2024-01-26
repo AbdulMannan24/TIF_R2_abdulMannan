@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const validator = require('validator');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { Snowflake } = require('@theinternetfolks/snowflake');
 const user = require('../../models/User');
 const validate = require('../../controllers/validate');
 const secretKey = process.env.SECRET_KEY;
@@ -16,7 +14,7 @@ router.post('/', async (req, res) => {
             return;
         }
         let fetchedUser = await user.findOne({email: req.body.email})
-        let checkPassword =  bcrypt.compare(req.body.password, fetchedUser.password);
+        let checkPassword = await bcrypt.compare(req.body.password, fetchedUser.password);
         if (checkPassword) {
             let token = jwt.sign({id: fetchedUser.id}, secretKey);
             let response = {

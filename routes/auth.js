@@ -5,8 +5,8 @@ const router = express.Router();
 const signUpRoute = require('./auth/signUp');
 router.use('/signUp', signUpRoute);
 
-// const signInRoute = require('./auth/signIn');
-// router.use('/signIn', signInRoute);
+const signInRoute = require('./auth/signIn');
+router.use('/signIn', signInRoute);
 
 // const getMeRoute = require('./auth/getMe');
 // router.use('/getMe', getMeRoute);

@@ -8,8 +8,8 @@ router.use('/signUp', signUpRoute);
 const signInRoute = require('./auth/signIn');
 router.use('/signIn', signInRoute);
 
-// const getMeRoute = require('./auth/getMe');
-// router.use('/getMe', getMeRoute);
+const getMeRoute = require('./auth/getMe');
+router.use('/me', getMeRoute);
 
 
 // delete this part 

@@ -1,3 +1,4 @@
+// ONLY used while creating a community
 const { Snowflake } = require('@theinternetfolks/snowflake');
 const role = require('../models/Role');
 

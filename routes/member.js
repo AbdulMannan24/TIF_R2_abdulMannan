@@ -3,10 +3,10 @@ const router = express.Router();
 
 // routes
 const addMemberRoute = require('./member/addMember');
-router.use('/member', addMemberRoute);
+router.use('/', addMemberRoute);
 
 const removeMemberRoute = require('./member/removeMember');
-router.use('/member/:id', removeMemberRoute);
+router.use('/', removeMemberRoute);
 
 // router.get('/', (req, res) => {
 //     console.log('route: v1/member');

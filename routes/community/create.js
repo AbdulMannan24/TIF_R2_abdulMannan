@@ -89,8 +89,3 @@ router.post('/', isLoggedIn, async (req, res) => {
 })
 
 module.exports = router;
-// delete this after use
-// router.post('/', (req, res) => {
-//     console.log("in community/create.js");
-//     res.json({message: "Creating a Community"});
-// })

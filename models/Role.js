@@ -8,8 +8,7 @@ const roleSchema = mongoose.Schema({
     }, 
     name: { 
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     created_at: {
         type: Date,

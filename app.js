@@ -30,6 +30,8 @@ app.get('/', async(req, res) => {
     //     password: "test1",
     //     email: "test1@example.com"
     // })
+    // use this token
+    // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxNTY2NjM3NjYwNTM0OTkyNzQiLCJpYXQiOjE3MDYzMjAyMDB9.koRyyIivM4s58UhXBM3DPzmmmxjbvb4VlTD0HN2eF9M
 
     // let result = await user.find({name: "test"});
     // if (result.length > 0) {
@@ -55,6 +57,7 @@ app.get('/', async(req, res) => {
     // } else {
     //     console.log("not found");
     // }
+    
     res.json({
         message: `
             Api routes:
@@ -76,3 +79,19 @@ app.listen(PORT, (req, res) => {
     console.log(`Server Started: ${PORT}`);
     db();
 })
+
+/*
+    {
+  "_id": {
+    "$oid": "65b4cc7476ece7092d1fc015"
+  },
+  "id": "7156940716730204570",
+  "community": "7156940716342144269",
+  "user": "7156663766053499274",
+  "role": "7156940716563634360",
+  "created_at": {
+    "$date": "2024-01-27T09:27:16.400Z"
+  },
+  "__v": 0
+}
+ */

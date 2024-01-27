@@ -25,5 +25,5 @@ roleSchema.pre('update', function (next) {
     next();
 });
 
-const role = mongoose.model('role', userSchema);
+const role = mongoose.model('role', roleSchema);
 module.exports = role;

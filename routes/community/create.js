@@ -12,6 +12,8 @@ const addMember = require('../../controllers/addMember');
 router.post('/', isLoggedIn, async (req, res) => {
     try {
         let communityName = req.body.name;
+        
+        // Name Validation
         if (!validator.isLength(communityName, {min: 2})) {
             let response = {
                 "status": false,
@@ -26,8 +28,26 @@ router.post('/', isLoggedIn, async (req, res) => {
             res.json(response);
             return;
         }
-        //let slug = validator.slugify(communityName);
+
+        // check if slug Exists
         let slug = slugify(communityName)
+        let slugExists = await community.find({slug: slug});
+        if (slugExists) {
+            let response = {
+                "status": false,
+                "errors": [
+                    {
+                        "param": "slug",
+                        "message": "Slug Already Exists, Please try other name",
+                        "code": "INVALID_INPUT"
+                    }
+                ]
+            }
+            res.json(response);
+            return; 
+        }
+
+        // create Community
         let createdCommunity = await community.create({
             id: Snowflake.generate(),
             name: communityName,

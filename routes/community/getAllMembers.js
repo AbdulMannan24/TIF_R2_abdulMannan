@@ -7,7 +7,6 @@ const user = require('../../models/User');
 router.get('/', async (req, res) => {
     try {
         let communityId = req.communityId;
-        console.log(communityId);
         let page = req.query.page || 1;
         let total = await member.countDocuments({community: communityId});
         let skipDocuments = (page - 1) * 10;

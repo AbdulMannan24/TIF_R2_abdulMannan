@@ -9,7 +9,10 @@ const getAllRoute = require('./community/getAll');
 router.use('/', getAllRoute);
 
 const getAllMembersRoute = require('./community/getAllMembers');
-router.use('/:id/members', getAllMembersRoute);
+router.use('/:id/members', (req,res, next) => {
+    req.communityId = req.params.id;
+    next();
+}, getAllMembersRoute);
 
 const getMyOwnedCommunityRoute = require('./community/getMyOwnedCommunity');
 router.use('/me/owner', getMyOwnedCommunityRoute);

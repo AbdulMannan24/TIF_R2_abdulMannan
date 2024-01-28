@@ -7,7 +7,6 @@ const community = require('../../models/Community');
 
 router.delete('/:id',isLoggedIn, async (req, res) => {
     try {
-       // console.log(req.params.id);
         let checkMember = await member.findOne({id: req.params.id});
         if (!checkMember) {
             let response = {

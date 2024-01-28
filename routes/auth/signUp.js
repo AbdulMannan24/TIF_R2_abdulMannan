@@ -7,30 +7,7 @@ const { Snowflake } = require('@theinternetfolks/snowflake');
 const user = require('../../models/User');
 const validate = require('../../controllers/validate');
 const secretKey = process.env.SECRET_KEY;
-/*
-    request
-        {
-            "name": "Dolores Abernathy",
-            "email": "dolores@westworld.com",
-            "password": "vGuFQ1nJSSrdMaYV1LiN3G1i"
-        }
-    
-    responses :
-    {
-        "status": true,
-        "content": {
-            "data": {
-                "id": "7039874298864994303",
-                "name": "Dolores Abernathy",
-                "email": "dolores@westworld.com",
-                "created_at": "2020-01-01T00:00:00.000Z"
-            },
-            "meta": {
-                "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIyMDIwLTAxLTAxVDAwOjAwOjAwLjAwMFoiLCJpZCI6IjcwMzk4NzQyOTg4NjQ5OTQzMDMiLCJleHAiOiIyMDIwLTAxLTAyVDAwOjAwOjAwLjAwMFoifQ.0WNbCXm8hZBPmib5Q-d1RNJWLoNsHj1AGtfHtcCguI0"
-            }
-        }
-    } 
-*/
+
 
 router.post('/', async (req, res) => {
     try {

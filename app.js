@@ -24,49 +24,7 @@ const memberRoutes = require('./routes/member.js');
 app.use('/v1/member', memberRoutes);
 
 app.get('/', async(req, res) => {
-    // user.create({
-    //     name: "test1",
-    //     id: Snowflake.generate(),
-    //     password: "test1",
-    //     email: "test1@example.com"
-    // })
-    // use this token
-    // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxNTcxOTY3MjcxMjgyODk3MTEiLCJpYXQiOjE3MDY0MDg2ODF9.fsKdqEP-BF8ja1ZWtrNUylLBQNL7GFV0tSHXfGRoCDM
-
-    // let result = await user.find({name: "test"});
-    // if (result.length > 0) {
-    //     result = result[0];
-    //     console.log(result);
-    //     console.log("this is found in Db");
-    //     let responseBody = {
-    //         "status": true,
-    //         "content": {
-    //             "data": {
-    //                 "id": result.id,
-    //                 "name": result.name,
-    //                 "email": result.email,
-    //                 "created_at": result.created_at
-    //             },
-    //             "meta": {
-    //                 "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIyMDIwLTAxLTAxVDAwOjAwOjAwLjAwMFoiLCJpZCI6IjcwMzk4NzQyOTg4NjQ5OTQzMDMiLCJleHAiOiIyMDIwLTAxLTAyVDAwOjAwOjAwLjAwMFoifQ.0WNbCXm8hZBPmib5Q-d1RNJWLoNsHj1AGtfHtcCguI0"
-    //             }
-    //         }
-    //     };
-    //     res.json(responseBody);
-    //     return;
-    // } else {
-    //     console.log("not found");
-    // }
-    
-    res.json({
-        message: `
-            Api routes:
-            -> /v1/role - has 2 sub routes
-            -> /v1/auth - has 3 sub routes
-            -> /v1/community - has 5 sub routes
-            -> /v1/member - has 2 sub routes
-        `
-    });
+    res.json({message: "check for routes on V1-> /v1"});
 })
 
 
@@ -79,26 +37,3 @@ app.listen(PORT, (req, res) => {
     console.log(`Server Started: ${PORT}`);
     db();
 })
-
-/*
-    {
-  "_id": {
-    "$oid": "65b4cc7476ece7092d1fc015"
-  },
-  "id": "7156940716730204570",
-  "community": "7156940716342144269",
-  "user": "7156663766053499274",
-  "role": "7156940716563634360",
-  "created_at": {
-    "$date": "2024-01-27T09:27:16.400Z"
-  },
-  "__v": 0
-}
- */
-
-
-// {
-//     "community": "7157199466506617889",
-//     "user": "7157195844614254557",
-//     "role": "7157202627374093257"
-//   }

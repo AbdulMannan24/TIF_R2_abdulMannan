@@ -7,13 +7,7 @@ const community = require('../../models/Community');
 const { Snowflake } = require('@theinternetfolks/snowflake');
 const isLoggedIn = require('../../middlewares/isLoggedIn');
 
-/*
-    {
-        "community": "7039920812358371327",
-        "user": "7039921766419924991",
-        "role": "7039873122358527999"
-    }
-*/
+
 router.get('/', (req, res) => {
     res.send("coming to add member");
 })

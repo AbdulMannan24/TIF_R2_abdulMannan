@@ -31,7 +31,7 @@ router.post('/', isLoggedIn, async (req, res) => {
 
         // check if slug Exists
         let slug = slugify(communityName)
-        let slugExists = await community.find({slug: slug});
+        let slugExists = await community.findOne({slug: slug});
         if (slugExists) {
             let response = {
                 "status": false,

@@ -17,7 +17,7 @@ router.get('/', isLoggedIn ,async(req, res) => {
                         "id": fetchedUser.id,
                         "name": fetchedUser.name,
                         "email": fetchedUser.email,
-                        "created_at": fetchedUser.created_at
+                        "created_at": fetchedUser.createdAt
                     }
                 }
             }

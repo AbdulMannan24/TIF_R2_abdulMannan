@@ -30,6 +30,7 @@ router.delete('/:id',isLoggedIn, async (req, res) => {
         } else {
             // let's find the role of the user who wants to delete this id member
             let moderator = await member.findOne({community: communityId, user: req.body.id});
+            console.log(moderator);
             if (moderator) {
                 let moderatorRole = await role.findOne({id: moderator.role});
                 if (moderatorRole) {
@@ -50,6 +51,18 @@ router.delete('/:id',isLoggedIn, async (req, res) => {
                         res.json(response);
                         return;
                     }
+                } else {
+                    let response = {
+                        "status": false,
+                        "errors": [
+                            {
+                                "message": "You are not authorized to perform this action.",
+                                "code": "NOT_ALLOWED_ACCESS"
+                            }
+                        ]
+                    }
+                    res.json(response);
+                    return;
                 }
             } else {
                 res.json({message: "Failed To Delete Member"});

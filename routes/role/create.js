@@ -33,8 +33,8 @@ router.post('/', isLoggedIn , async (req, res) => {
                     "data": {
                         "id": createdRole.id,
                         "name": createdRole.name,
-                        "created_at": createdRole.created_at,
-                        "updated_at": createdRole.updated_at
+                        "created_at": createdRole.createdAt,
+                        "updated_at": createdRole.updatedAt
                     }
                 }
             }

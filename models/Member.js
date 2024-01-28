@@ -18,11 +18,11 @@ const memberSchema = mongoose.Schema({
         type: String,
         required: true  
     },
-    created_at: {
-        type: Date,
-        default: Date.now,
-    }
-})
+    // created_at: {
+    //     type: Date,
+    //     default: Date.now,
+    // }
+}, {timestamps: true});
 
 const member = mongoose.model('Member', memberSchema);
 module.exports = member;

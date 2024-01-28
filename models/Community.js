@@ -18,20 +18,26 @@ const communitySchema = mongoose.Schema({
     owner: {
         type: String,
         required: true
-    },
-    created_at: {
-        type: Date,
-        default: Date.now,
-    },
-    updated_at: {
-        type: Date
     }
-})
+    
+    // created_at: {
+    //     type: Date,
+    //     default: Date.now,
+    // },
+    // updated_at: {
+    //     type: Date
+    // }
+}, {timestamps: true});
 
-communitySchema.pre('update', function (next) {
-    this.update({}, { $set: { updated_at: new Date() } });
-    next();
-});
+// communitySchema.pre('save', function (next) {
+//     this.update({}, { $set: { updated_at: new Date() } });
+//     next();
+// });
+
+// communitySchema.pre('update', function (next) {
+//     this.update({}, { $set: { updated_at: new Date() } });
+//     next();
+// });
 
 const community = mongoose.model('Community', communitySchema);
 module.exports = community;

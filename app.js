@@ -31,7 +31,7 @@ app.get('/', async(req, res) => {
     //     email: "test1@example.com"
     // })
     // use this token
-    // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxNTY2NjM3NjYwNTM0OTkyNzQiLCJpYXQiOjE3MDYzMjAyMDB9.koRyyIivM4s58UhXBM3DPzmmmxjbvb4VlTD0HN2eF9M
+    // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxNTcxOTY3MjcxMjgyODk3MTEiLCJpYXQiOjE3MDY0MDg2ODF9.fsKdqEP-BF8ja1ZWtrNUylLBQNL7GFV0tSHXfGRoCDM
 
     // let result = await user.find({name: "test"});
     // if (result.length > 0) {
@@ -95,3 +95,10 @@ app.listen(PORT, (req, res) => {
   "__v": 0
 }
  */
+
+
+// {
+//     "community": "7157199466506617889",
+//     "user": "7157195844614254557",
+//     "role": "7157202627374093257"
+//   }

@@ -10,14 +10,14 @@ const roleSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    created_at: {
-        type: Date,
-        default: Date.now()
-    },
-    updated_at: {
-        type: Date
-    }
-});
+    // created_at: {
+    //     type: Date,
+    //     default: Date.now()
+    // },
+    // updated_at: {
+    //     type: Date
+    // }
+}, {timestamps: true});
 
 roleSchema.pre('update', function (next) {
     this.update({}, { $set: { updated_at: new Date() } });
